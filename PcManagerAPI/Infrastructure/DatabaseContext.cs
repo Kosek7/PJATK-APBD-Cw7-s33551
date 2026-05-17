@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PcManagerAPI.Models;
-using WebApplication2.Models;
 
 namespace WebApplication2.Infrastructure;
 
