@@ -19,7 +19,6 @@ public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
     {
         base.OnModelCreating(modelBuilder);
 
-        // PCs
         modelBuilder.Entity<PC>().HasData([
             new PC
             {
@@ -50,7 +49,6 @@ public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
             }
         ]);
 
-        // Component Types
         modelBuilder.Entity<ComponentType>().HasData([
             new ComponentType
             {
@@ -72,7 +70,6 @@ public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
             }
         ]);
 
-        // Manufacturers
         modelBuilder.Entity<ComponentManufacturer>().HasData([
             new ComponentManufacturer
             {
@@ -97,7 +94,6 @@ public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
             }
         ]);
 
-        // Components
         modelBuilder.Entity<Component>().HasData([
             new Component
             {
@@ -125,7 +121,6 @@ public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
             }
         ]);
 
-        // PCComponents
         modelBuilder.Entity<PCComponent>().HasData([
             new PCComponent
             {

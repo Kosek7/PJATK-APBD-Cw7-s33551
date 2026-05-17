@@ -8,7 +8,6 @@ namespace PcManagerAPI.Service;
 
 public class PcService(DatabaseContext ctx) : IPcService
 {
-    // GET ALL
     public async Task<IEnumerable<PcResponse>> GetAllAsync(CancellationToken cancellationToken)
     {
         return await ctx.PCs
@@ -23,7 +22,6 @@ public class PcService(DatabaseContext ctx) : IPcService
             .ToListAsync(cancellationToken);
     }
 
-    // GET BY ID + COMPONENTS
     public async Task<PcDetailsResponse> GetByIdAsync(int id, CancellationToken cancellationToken)
     {
         var pc = await ctx.PCs
@@ -52,7 +50,6 @@ public class PcService(DatabaseContext ctx) : IPcService
         return pc;
     }
 
-    // CREATE
     public async Task<PcResponse> AddAsync(CreatePcRequest request, CancellationToken cancellationToken)
     {
         var pc = new PC
@@ -77,7 +74,6 @@ public class PcService(DatabaseContext ctx) : IPcService
         );
     }
 
-    // UPDATE (ExecuteUpdate)
     public async Task UpdateAsync(int id, UpdatePcRequest request, CancellationToken cancellationToken)
     {
         var affected = await ctx.PCs
@@ -95,7 +91,6 @@ public class PcService(DatabaseContext ctx) : IPcService
             throw new NotFoundException($"PC with id {id} not found");
     }
 
-    // DELETE
     public async Task DeleteAsync(int id, CancellationToken cancellationToken)
     {
         var affected = await ctx.PCs
