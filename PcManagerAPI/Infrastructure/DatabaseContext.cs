@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PcManagerAPI.Models;
 
-namespace WebApplication2.Infrastructure;
+namespace PcManagerAPI.Infrastructure;
 
 public class DatabaseContext(DbContextOptions opt) : DbContext(opt)
 {
